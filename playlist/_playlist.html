@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Avalon Media System</title>
+	
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Edit  - Playlist, Avalon Media System</title>
+<meta content="authenticity_token" name="csrf-param" />
+<meta content="sxpLooyGKRKLFjwT2BbZQkcsbdy9yXFAOruQ4/aXE20=" name="csrf-token" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+<link href="//pawpaw.dlib.indiana.edu/assets/application-2887f35dd45304d4f728fdda4c483911.css" media="all" rel="stylesheet" />
+<link href="/playlist/inc/styles.css" media="all" rel="stylesheet" />
+<script src="//pawpaw.dlib.indiana.edu//assets/modernizr-39df0fbffd26a4587708cfd80999e72e.js">
+	</script>
+<!-- select -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+<style type="text/css">
+figure{width:100%;}
+figure img{max-width:100%;}
+
+</style>
+	</head>
+	<body data-mountpoint="/">
+<a id="skip-to-content" class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+<div id="ajax-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal menu" aria-hidden="true">
+      <div class="modal-dialog">
+    <div class="modal-content"> </div>
+  </div>
+    </div>
+<div class="custom-header">
+      <div class="row">
+    <div class="row-fluid whitespace-half">
+          <header>
+        <div class="col-sm-2 logo"> <a href="/"> <img alt="Avalon Media System - Release 4.0.1" src="//pawpaw.dlib.indiana.edu//assets/Home-615cf8c18517d3f42dce38671ce33bff.png" /> </a> </div>
+        <!-- <div class="col-md-6">
+          <h1>Avalon Media System</h1>
+          <p class="lead">Avalon Media System Release 4.0.1</p>
+        </div>    -->
+        <div class="pull-right log-in-out"> gfitzwat <a href="/users/sign_out">Sign out</a> </div>
+      </header>
+        </div>
+  </div>
+    </div>
+<div class="container-fluid">
+      <div class="container-fluid">
+    <div id="header-navbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
+        <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#user-util-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+              <a class="navbar-brand desktop-hidden" href="/">Avalon Media System</a> </div>
+        <div class="collapse navbar-collapse" id="user-util-collapse">
+              <div class="navbar-left">
+            <ul class="nav navbar-nav">
+                  <li><a href="/catalog?q=&amp;search_field=all_fields&amp;utf8=%E2%9C%93">Browse</a></li>
+                  <li class=""><a href="/admin/collections">Manage Content</a></li>
+                  <li class=""><a href="/admin/groups" target="_admin">Manage Groups</a></li>
+                  <li class=""> <a href="/bookmarks" id="bookmarks_nav"> Manage Selected Items (<span data-role='bookmark-counter'>0</span>) </a> </li>
+                  <li class="dropdown active"><a class="dropdown-toggle admin-link " data-toggle="dropdown" href="#" id="playlist-link">Playlist<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="/playlist/new.html">Create New Playlist</a></li>
+                  <li class="divider"><!-- divide and counquer cognitive load --></li>
+                  <li><a href="/playlist/playlist.html">Default Playlist</a></li>
+                  <li><a href="/playlist/playlist.html">Class Playlist</a></li>
+                  <li class="divider"><!-- divide and counquer cognitive load --></li>
+                  <li><a href="/playlist/show-all.html">Show All</a></li>
+                </ul>
+              </li>
+                  <li class="divider desktop-hidden" />
+                  <a href="/users/sign_out">Sign out</a>
+                </ul>
+          </div>
+              <div class="navbar-right">
+            <form accept-charset="UTF-8" action="/catalog" class="avalon-search-query-form avalon-form-search" method="get">
+                  <div style="margin:0;padding:0;display:inline">
+                <input name="utf8" type="hidden" value="&#x2713;">
+              </div>
+                  <input id="search_field" name="search_field" type="hidden" value="all_fields">
+                  <div>
+                <label class="sr-only" for="searchField">Search</label>
+                <input class="search-query q" id="searchField" name="q" placeholder="Search" type="text" value="">
+                <button type="submit" class="btn btn-primary hidden"> <span class="submit-search-text">Search</span> <i class="fa fa-search icon-white"></i> </button>
+              </div>
+                </form>
+          </div>
+            </div>
+      </div>
+        </div>
+  </div>
+      <div class="container-fluid" id="alerts"> 
+    <!-- div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <p>Successfully logged into the system</p>
+      </div --> 
+  </div>
+      <div class="container-fluid">
+      <div class="container">
+<h3>Default Playlist 
+     <a class="btn btn-default pull-right" href="edit-playlist.html">
+                <span class="glyphicon glyphicon-pencil"></span> Edit Playlist
+</a> 
+
+            </h3>
+<div class="container">
+<div class="col-md-8">
+<figure><img src="../_concepts/img/player-bookmarks-playlist-1.png"  alt=""/></figure>
+ <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Playlist</th>
+      <th><span class="glyphicon glyphicon-time"></span></th>
+        <th><span class="glyphicon glyphicon-cog"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>My very first  clip</td>
+        <td>Default</td>
+        <td>1:25 &#8212; 2:44</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+
+    
+      
+      
+            <tr>
+        <td>A random  clip</td>
+        <td>Default</td>
+        <td>5:30 &#8212; 6:30</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+      
+      
+            <tr>
+        <td>Another clip</td>
+        <td>Default</td>
+        <td>5:30 &#8212; 7:30</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+      
+      
+            <tr>
+        <td>Yet another  clip</td>
+        <td>Default</td>
+        <td>5:30 &#8212; 9:32</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+      
+                  <tr>
+        <td>My very last  clip, I promise</td>
+        <td>Default</td>
+        <td>7:30 &#8212; 8:35</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+</div>
+<div id="documents" class="col-md-4">
+    
+
+  <div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         1. 
+         </span>
+         <a data-context-href="/catalog/avalon:8101/track?counter=1&amp;search_id=1625117" href="/media_objects/avalon:8101" class="outline_on">"Pathétique" sonata (1:08:00)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:8101" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:8101" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:8101" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:8101"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:8101">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">Beethoven, Ludwig van, 1770-1827.</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1999 (Creation date: 1941)</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         2. 
+         </span>
+         <a data-context-href="/catalog/avalon:5494/track?counter=2&amp;search_id=1625117" href="/media_objects/avalon:5494" class="outline_on">1.a sonata-fantasia (Désespérance) ; 2.a sonata-fantasia ; 3.a sonata ; Improviso : n.o 7 (54:01)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:5494" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:5494" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:5494" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:5494"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:5494">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">Villa-Lobos, Heitor.</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1983 (Creation date: 1960)</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         3. 
+         </span>
+         <a data-context-href="/catalog/avalon:4166/track?counter=3&amp;search_id=1625117" href="/media_objects/avalon:4166" class="outline_on">12 fantasias for harpsichord (first twelve) (51:21)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:4166" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:4166" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:4166" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:4166"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:4166">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">Telemann, Georg Philipp, 1681-1767.</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1962</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         4. 
+         </span>
+         <a data-context-href="/catalog/avalon:6129/track?counter=4&amp;search_id=1625117" href="/media_objects/avalon:6129" class="outline_on">15 variations and fugue in E flat : Eroica variations ; Bagatelle in A minor, OoO [i.e. WoO] 59 :... (49:55)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:6129" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:6129" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:6129" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:6129"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:6129">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">Beethoven, Ludwig van, 1770-1827.</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1985 (Creation date: 1984)</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         5. 
+         </span>
+         <a data-context-href="/catalog/avalon:4590/track?counter=5&amp;search_id=1625117" href="/media_objects/avalon:4590" class="outline_on">150 Jahre Wiener Philharmoniker = 150 years Wiener Philharmoniker (13:33:29)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:4590" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:4590" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:4590" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:4590"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:4590">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">Wiener Philharmoniker</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1991 (Creation date: 1944)</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         6. 
+         </span>
+         <a data-context-href="/catalog/avalon:5555/track?counter=6&amp;search_id=1625117" href="/media_objects/avalon:5555" class="outline_on">17th century bel canto (51:34)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:5555" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:5555" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:5555" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:5555"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:5555">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">See Other Contributors</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1985 (Creation date: 1984)</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         7. 
+         </span>
+         <a data-context-href="/catalog/avalon:5835/track?counter=7&amp;search_id=1625117" href="/media_objects/avalon:5835" class="outline_on">25 years of Prestige. (1:35:24)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:5835" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:5835" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:5835" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:5835"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:5835">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">See Other Contributors</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1974</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         8. 
+         </span>
+         <a data-context-href="/catalog/avalon:9263/track?counter=8&amp;search_id=1625117" href="/media_objects/avalon:9263" class="outline_on">3 excerpts from Spartacus Concerto-rhapsody for cello and orchestra ; Concerto-rhapsody for piano... (1:12:21)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:9263" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:9263" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:9263" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:9263"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:9263">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">Khachaturi͡an, Aram, 1903-1978.</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1993 (Creation date: 1973)</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         9. 
+         </span>
+         <a data-context-href="/catalog/avalon:6256/track?counter=9&amp;search_id=1625117" href="/media_objects/avalon:6256" class="outline_on">3-i͡a simfonii͡a (1:31:42)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:6256" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:6256" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:6256" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:6256"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:6256">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">Mahler, Gustav, 1860-1911.</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1962</dd>
+
+</dl>
+
+</div>
+<div class="document blacklight-info-fedora-afmodel-mediaobject" itemscope="" itemtype="http://schema.org/Thing">
+       
+      <div class="documentHeader row">
+        
+         <h5 class="index_title col-sm-9 col-lg-10">
+         <span class="document-counter">
+         10. 
+         </span>
+         <a data-context-href="/catalog/avalon:6621/track?counter=10&amp;search_id=1625117" href="/media_objects/avalon:6621" class="outline_on">4 cantates profanes (1:13:41)</a>
+        </h5>
+
+        <div class="index-document-functions col-sm-3 col-lg-2">
+      <form accept-charset="UTF-8" action="/bookmarks/avalon:6621" class="bookmark_toggle form-horizontal" data-absent="Select" data-doc-id="avalon:6621" data-inprogress="Saving..." data-present="Selected" method="post"><div style="margin: 0px; padding: 0px; display: none;"><input name="utf8" type="hidden" value="✓" class="outline_on"><input name="_method" type="hidden" value="delete" class="outline_on"><input name="authenticity_token" type="hidden" value="m/beWwtrwpD+7FpnH/3CqdDCL3ArYgDzPmcYm1H6No8=" class="outline_on"></div>
+        
+<div class="checkbox toggle_bookmark"><label class="toggle_bookmark checked" for="toggle_bookmark_avalon:6621" title=""><input type="checkbox" class="toggle_bookmark outline_on" id="toggle_bookmark_avalon:6621"> <span>Selected</span></label></div></form>
+</div>
+      </div>
+      
+
+
+<div class="col-md-3">
+    <a class="result-thumbnail block outline_on" href="/media_objects/avalon:6621">
+      <img alt="Audio icon" src="//pawpaw.dlib.indiana.edu/assets/audio_icon-b5411981093d7c9d7c3ac0ff6f9d03ac.png">
+</a></div>
+
+
+<dl class="document-metadata dl-horizontal dl-invert col-md-9">
+  
+	    <dt class="blacklight-creator_ssim">Main contributors:</dt>
+	    <dd class="blacklight-creator_ssim">Clérambault, Louis-Nicolas, 1676-1749.</dd>
+	    <dt class="blacklight-date_ssi">Date:</dt>
+	    <dd class="blacklight-date_ssi">1991</dd>
+
+</dl>
+
+</div>
+
+</div>
+
+
+
+</div>
+</div>
+      
+      
+      
+  </div>
+    </div>
+<div class="container-fluid">
+      <footer>
+    <ul>
+          <li><img alt="Avalon Media System - Release 4.0.1" src="//pawpaw.dlib.indiana.edu/assets/AvalonMediaSystem_Logo_A-d918d9f0531edbcbe069b764a658c3da.png" />
+      <li><a href="http://www.avalonmediasystem.org">Avalon Media System Project Website</a> </li>
+          <li><a href="/comments">Contact Us</a></li>
+        </ul>
+    <div class="release"> Avalon Media System Release 4.0.1 </div>
+  </footer>
+    </div>
+<!-- With this many Javascript files performance will be much better
+         if they are included here. That means the important content will
+         load first; the page will not gag on trying to pull down files
+         from a CDN --> 
+<script src="//pawpaw.dlib.indiana.edu/assets/application-6aa66e9d4e2df683da13d8528a7bdbad.js">
+</script>
+</body>
+</html>

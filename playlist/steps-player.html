@@ -1,0 +1,191 @@
+<!doctype html>
+<html  lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Guides</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+<!-- Latest compiled and minified JavaScript -->
+<link rel="stylesheet" href="/inc/styles.css" type="text/css">
+<style>
+body { padding: 3em; }
+.btn-default
+{
+    background: #fff;
+    color: #333;
+    border: 1px solid #e0e0e0;
+}
+.js-select-all
+{
+    max-width: 370px;
+    text-align: right; 
+    float: right;
+}
+tr td:last-child { text-align: right; text-wrap:none; }
+tr td:nth-of-type(1){width:45%;}
+tr td:nth-of-type(2),tr td:nth-of-type(4){width:20%;}
+tr td:nth-of-type(3){width:15%;}
+td,th{white-space:nowrap}
+/*last field */
+tr th:nth-of-type(4){text-align:right;}
+h3 small.lock{font-size:.5em;line-height:0;padding-bottom:3px; float:left;}
+ul{list-style:none;}
+
+ul li{width:100%; float:left; padding:.5em; margin:1em;}
+</style>
+<!-- Latest compiled and minified JavaScript -->
+</head>
+<body>
+
+<!-- content-->
+<main class="center-block">
+<ul >
+<li ><img src="img/1.png" alt=""/></li>
+ <!-- add description / color multiple timelines, more than 1 sections? overlay ghosted playlist -->
+  <li ><img src="img/2.png" alt=""/></li>
+ <li >  <img src="img/3.png"  alt=""/></li>
+ <li> <img src="img/4.png"  alt=""/></li>
+  <li > <img src="img/5.png"  alt=""/></li>
+ <li> <div class="col-md-6"><img src="img/6.png"  alt="" class="pull-right"/></div>
+ <div class="col-md-6">
+ 
+<div class="alert alert-success alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <strong>My very first clip</strong> added.
+</div>
+   <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Playlist</th>
+      <th><span class="glyphicon glyphicon-time"></span></th>
+        <th><span class="glyphicon glyphicon-cog"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>My very first  clip</td>
+        <td>Default</td>
+        <td>1:25 &#8212; 2:44</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a></td>
+      </tr>
+
+    </tbody>
+  </table>
+ </div>
+ 
+ </li>
+ 
+ <li>
+ 
+  <div class="col-md-6"><img src="img/8.png"  alt="" class="pull-right"/></div>
+ <div class="col-md-6">
+   
+    <div class="js-select-all text-right">
+    
+
+    
+    
+    <div class="input-group text-right pull-right">
+      <div class="input-group"> <span class="input-group-btn">
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-play"></span> Play Selected </button>
+        </span> <span class="input-group-addon">
+        <input type="checkbox" aria-label="...">
+        </span> </div>
+    </div>
+    
+    
+    <div class="form-group pull-right">
+  <label for="sel1" class="sr-only">Sorty by</label>
+  <select class="form-control" id="sel1">
+    <option>Sort by...</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+  </select>
+</div>
+    
+  </div>
+   <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Playlist</th>
+      <th><span class="glyphicon glyphicon-time"></span></th>
+        <th><span class="glyphicon glyphicon-cog"></span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>My very first  clip</td>
+        <td>Default</td>
+        <td>1:25 &#8212; 2:44</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+
+    
+      
+      
+            <tr>
+        <td>A random  clip</td>
+        <td>Default</td>
+        <td>5:30 &#8212; 6:30</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+      
+      
+            <tr>
+        <td>Another clip</td>
+        <td>Default</td>
+        <td>5:30 &#8212; 7:30</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+      
+      
+            <tr>
+        <td>Yet another  clip</td>
+        <td>Default</td>
+        <td>5:30 &#8212; 9:32</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+      
+                  <tr>
+        <td>My very last  clip, I promise</td>
+        <td>Default</td>
+        <td>7:30 &#8212; 8:35</td>
+        <td><a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-pencil"></span></a> <a class="btn btn-sm btn-default" href="#" title="delete"><span class="glyphicon glyphicon-play"></span></a> <span class="btn btn-sm btn-default" >
+          <input type="checkbox" aria-label="...">
+          </span></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>
+ </div>
+ 
+ 
+ </li>
+</ol>
+  
+
+  
+  </main>
+  <!-- content --> 
+</div>
+<footer class="col-lg-12"></footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script> 
+<!-- script src="/inc/scripts.js"></script -->
+</body>
+</html>

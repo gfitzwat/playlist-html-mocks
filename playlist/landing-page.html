@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Avalon Media System</title>
+	<meta content="authenticity_token" name="csrf-param" />
+	<meta content="sxpLooyGKRKLFjwT2BbZQkcsbdy9yXFAOruQ4/aXE20=" name="csrf-token" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="//pawpaw.dlib.indiana.edu/assets/application-2887f35dd45304d4f728fdda4c483911.css" media="all" rel="stylesheet" />
+	<script src="//pawpaw.dlib.indiana.edu//assets/modernizr-39df0fbffd26a4587708cfd80999e72e.js">
+	</script>
+	<style>		#playlist-link .glyphicon-plus{font-weight:bold;line-height:1em;    }
+		.glyphicon-plus:before{content:"\002b";font-weight:bold; margin:0 2px 0 0;font-size:1.3em;;}
+	</style>
+</head>
+<body data-mountpoint="/">
+<a id="skip-to-content" class="sr-only sr-only-focusable" href="#content">Skip to main content</a> 
+<div id="ajax-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="modal menu" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+		</div>
+	</div>
+</div>
+<div class="custom-header">
+	<div class="row">
+		<div class="row-fluid whitespace-half">
+			<header>
+				<div class="col-sm-2 logo">
+					<a href="/"> <img alt="Avalon Media System - Release 4.0.1" src="//pawpaw.dlib.indiana.edu//assets/Home-615cf8c18517d3f42dce38671ce33bff.png" /> </a> 
+				</div>
+<!-- <div class="col-md-6">
+          <h1>Avalon Media System</h1>
+          <p class="lead">Avalon Media System Release 4.0.1</p>
+        </div>    -->
+				<div class="pull-right log-in-out">
+					gfitzwat <a href="/users/sign_out">Sign out</a> 
+				</div>
+			</header>
+		</div>
+	</div>
+</div>
+<div class="container-fluid">
+	<div class="container-fluid">
+		<div id="header-navbar" class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#user-util-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a class="navbar-brand desktop-hidden" href="/">Avalon Media System</a> 
+				</div>
+				<div class="collapse navbar-collapse" id="user-util-collapse">
+					<div class="navbar-left">
+						<ul class="nav navbar-nav">
+							<li><a href="/catalog?q=&amp;search_field=all_fields&amp;utf8=%E2%9C%93">Browse</a></li>
+							<li class=""><a href="/admin/collections">Manage Content</a></li>
+							<li class=""><a href="/admin/groups" target="_admin">Manage Groups</a></li>
+							<li class=""> <a href="/bookmarks" id="bookmarks_nav"> Manage Selected Items (<span data-role='bookmark-counter'>0</span>) </a> </li>
+							<li class="dropdown"><a class="dropdown-toggle admin-link " data-toggle="dropdown" href="#" id="playlist-link">Playlist<span class="caret"></span></a> 
+						                <ul class="dropdown-menu">
+                  <li><a href="/playlist/new.html">Create New Playlist</a></li>
+                  <li class="divider"><!-- divide and counquer cognitive load --></li>
+                  <li><a href="/playlist/playlist.html">Default Playlist</a></li>
+                  <li><a href="/playlist/playlist.html">Class Playlist</a></li>
+                  <li class="divider"><!-- divide and counquer cognitive load --></li>
+                  <li><a href="/playlist/show-all.html">Show All</a></li>
+                </ul>
+							</li>
+							<li class="divider desktop-hidden" />
+							<a href="/users/sign_out">Sign out</a> 
+						</ul>
+					</div>
+					<div class="navbar-right">
+						<form accept-charset="UTF-8" action="/catalog" class="avalon-search-query-form avalon-form-search" method="get">
+							<div style="margin:0;padding:0;display:inline">
+								<input name="utf8" type="hidden" value="&#x2713;">
+							</div>
+							<input id="search_field" name="search_field" type="hidden" value="all_fields">
+							<div>
+								<label class="sr-only" for="searchField">Search</label> 
+								<input class="search-query q" id="searchField" name="q" placeholder="Search" type="text" value="">
+								<button type="submit" class="btn btn-primary hidden"> <span class="submit-search-text">Search</span> <i class="fa fa-search icon-white"></i> </button> 
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid" id="alerts">
+<!-- div class="alert alert-success">
+        <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <p>Successfully logged into the system</p>
+      </div -->
+	</div>
+	<div id="sidebar" class="col-md-3 col-sm-4">
+		<div id="facets" class="facets sidenav">
+			<div class="top-panel-heading panel-heading">
+				<button type="button" class="facets-toggle" data-toggle="collapse" data-target="#facet-panel-collapse"> <span class="sr-only">Toggle facets</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+				<h4>
+					Browse By 
+				</h4>
+			</div>
+			<div id="facet-panel-collapse" class="collapse panel-group">
+				<div class="panel panel-default facet_limit blacklight-format_sim ">
+					<div class=" collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-format_sim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Format</a> 
+						</h5>
+					</div>
+					<div id="facet-format_sim" class="panel-collapse facet-content in">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bformat_sim%5D%5B%5D=Sound+Recording">Sound Recording</a></span>
+								<div class="facet-count">
+									<span class="">907</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bformat_sim%5D%5B%5D=Moving+Image">Moving Image</a></span>
+								<div class="facet-count">
+									<span class="">72</span>
+								</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default facet_limit blacklight-creator_ssim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-creator_ssim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Main contributor</a> 
+						</h5>
+					</div>
+					<div id="facet-creator_ssim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreator_ssim%5D%5B%5D=See+Other+Contributors">See Other Contributors</a></span>
+								<div class="facet-count">
+									<span class="">116</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreator_ssim%5D%5B%5D=%5B%22IU%22%5D">[&quot;IU&quot;]</a></span>
+								<div class="facet-count">
+									<span class="">32</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreator_ssim%5D%5B%5D=Bach%2C+Johann+Sebastian%2C+1685-1750.">Bach, Johann Sebastian, 1685-1750.</a></span>
+								<div class="facet-count">
+									<span class="">29</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreator_ssim%5D%5B%5D=Mozart%2C+Wolfgang+Amadeus%2C+1756-1791.">Mozart, Wolfgang Amadeus, 1756-1791.</a></span>
+								<div class="facet-count">
+									<span class="">20</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreator_ssim%5D%5B%5D=Beethoven%2C+Ludwig+van%2C+1770-1827.">Beethoven, Ludwig van, 1770-1827.</a></span>
+								<div class="facet-count">
+									<span class="">16</span>
+								</div>
+								</li>
+								<li class="more_facets_link"> <a class="more_facets_link" href="https://pawpaw.dlib.indiana.edu/catalog/facet/creator_ssim">more <span class="sr-only">Main contributor</span> »</a> </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default facet_limit blacklight-date_sim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-date_sim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Date</a> 
+						</h5>
+					</div>
+					<div id="facet-date_sim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bdate_sim%5D%5B%5D=2015">2015</a></span>
+								<div class="facet-count">
+									<span class="">59</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bdate_sim%5D%5B%5D=1991">1991</a></span>
+								<div class="facet-count">
+									<span class="">43</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bdate_sim%5D%5B%5D=1993">1993</a></span>
+								<div class="facet-count">
+									<span class="">41</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bdate_sim%5D%5B%5D=1997">1997</a></span>
+								<div class="facet-count">
+									<span class="">40</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bdate_sim%5D%5B%5D=1989">1989</a></span>
+								<div class="facet-count">
+									<span class="">38</span>
+								</div>
+								</li>
+								<li class="more_facets_link"> <a class="more_facets_link" href="https://pawpaw.dlib.indiana.edu/catalog/facet/date_sim">more <span class="sr-only">Date</span> »</a> </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default facet_limit blacklight-genre_sim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-genre_sim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Genres</a> 
+						</h5>
+					</div>
+					<div id="facet-genre_sim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bgenre_sim%5D%5B%5D=Live+sound+recordings.">Live sound recordings.</a></span>
+								<div class="facet-count">
+									<span class="">8</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bgenre_sim%5D%5B%5D=Sonatas.">Sonatas.</a></span>
+								<div class="facet-count">
+									<span class="">3</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bgenre_sim%5D%5B%5D=music">music</a></span>
+								<div class="facet-count">
+									<span class="">3</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bgenre_sim%5D%5B%5D=Arrangements+%28Music%29">Arrangements (Music)</a></span>
+								<div class="facet-count">
+									<span class="">2</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bgenre_sim%5D%5B%5D=Chamber+music.">Chamber music.</a></span>
+								<div class="facet-count">
+									<span class="">2</span>
+								</div>
+								</li>
+								<li class="more_facets_link"> <a class="more_facets_link" href="https://pawpaw.dlib.indiana.edu/catalog/facet/genre_sim">more <span class="sr-only">Genres</span> »</a> </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default facet_limit blacklight-collection_ssim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-collection_ssim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Collection</a> 
+						</h5>
+					</div>
+					<div id="facet-collection_ssim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcollection_ssim%5D%5B%5D=Variations">Variations</a></span>
+								<div class="facet-count">
+									<span class="">894</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcollection_ssim%5D%5B%5D=Leah+Test">Leah Test</a></span>
+								<div class="facet-count">
+									<span class="">34</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcollection_ssim%5D%5B%5D=Jon+Cameron%27s+Test+Collection">Jon Cameron&#39;s Test Collection</a></span>
+								<div class="facet-count">
+									<span class="">14</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcollection_ssim%5D%5B%5D=BK+Test">BK Test</a></span>
+								<div class="facet-count">
+									<span class="">7</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcollection_ssim%5D%5B%5D=TAMU+Test">TAMU Test</a></span>
+								<div class="facet-count">
+									<span class="">6</span>
+								</div>
+								</li>
+								<li class="more_facets_link"> <a class="more_facets_link" href="https://pawpaw.dlib.indiana.edu/catalog/facet/collection_ssim">more <span class="sr-only">Collection</span> »</a> </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default facet_limit blacklight-unit_ssim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-unit_ssim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Unit</a> 
+						</h5>
+					</div>
+					<div id="facet-unit_ssim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bunit_ssim%5D%5B%5D=Music+Library">Music Library</a></span>
+								<div class="facet-count">
+									<span class="">913</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bunit_ssim%5D%5B%5D=University+Archives">University Archives</a></span>
+								<div class="facet-count">
+									<span class="">72</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bunit_ssim%5D%5B%5D=Default+Unit">Default Unit</a></span>
+								<div class="facet-count">
+									<span class="">5</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bunit_ssim%5D%5B%5D=Archives+of+Traditional+Music">Archives of Traditional Music</a></span>
+								<div class="facet-count">
+									<span class="">3</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bunit_ssim%5D%5B%5D=Black+Film+Center%2FArchive">Black Film Center/Archive</a></span>
+								<div class="facet-count">
+									<span class="">2</span>
+								</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default facet_limit blacklight-language_sim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-language_sim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Language</a> 
+						</h5>
+					</div>
+					<div id="facet-language_sim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Blanguage_sim%5D%5B%5D=No+linguistic+content">No linguistic content</a></span>
+								<div class="facet-count">
+									<span class="">236</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Blanguage_sim%5D%5B%5D=English">English</a></span>
+								<div class="facet-count">
+									<span class="">200</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Blanguage_sim%5D%5B%5D=German">German</a></span>
+								<div class="facet-count">
+									<span class="">92</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Blanguage_sim%5D%5B%5D=Italian">Italian</a></span>
+								<div class="facet-count">
+									<span class="">66</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Blanguage_sim%5D%5B%5D=Latin">Latin</a></span>
+								<div class="facet-count">
+									<span class="">65</span>
+								</div>
+								</li>
+								<li class="more_facets_link"> <a class="more_facets_link" href="https://pawpaw.dlib.indiana.edu/catalog/facet/language_sim">more <span class="sr-only">Language</span> »</a> </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="facets-workflow" class="facets sidenav">
+			<div class="top-panel-heading panel-heading">
+				<button type="button" class="facets-toggle" data-toggle="collapse" data-target="#facet-panel-workflow-collapse"> <span class="sr-only">Toggle facets</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> 
+				<h4>
+					Limit to 
+				</h4>
+			</div>
+			<div id="facet-panel-workflow-collapse" class="collapse panel-group">
+				<div class="panel panel-default facet_limit blacklight-workflow_published_sim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-workflow_published_sim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Published</a> 
+						</h5>
+					</div>
+					<div id="facet-workflow_published_sim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bworkflow_published_sim%5D%5B%5D=Published">Published</a></span>
+								<div class="facet-count">
+									<span class="">953</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bworkflow_published_sim%5D%5B%5D=Unpublished">Unpublished</a></span>
+								<div class="facet-count">
+									<span class="">42</span>
+								</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default facet_limit blacklight-created_by_sim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-created_by_sim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">Created by</a> 
+						</h5>
+					</div>
+					<div id="facet-created_by_sim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreated_by_sim%5D%5B%5D=Variations+Batch+Ingest">Variations Batch Ingest</a></span>
+								<div class="facet-count">
+									<span class="">894</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreated_by_sim%5D%5B%5D=lmb">lmb</a></span>
+								<div class="facet-count">
+									<span class="">35</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreated_by_sim%5D%5B%5D=joncamer">joncamer</a></span>
+								<div class="facet-count">
+									<span class="">15</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreated_by_sim%5D%5B%5D=jbondurant%40library.tamu.edu">jbondurant@library.tamu.edu</a></span>
+								<div class="facet-count">
+									<span class="">6</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bcreated_by_sim%5D%5B%5D=kdflick">kdflick</a></span>
+								<div class="facet-count">
+									<span class="">6</span>
+								</div>
+								</li>
+								<li class="more_facets_link"> <a class="more_facets_link" href="https://pawpaw.dlib.indiana.edu/catalog/facet/created_by_sim">more <span class="sr-only">Created by</span> »</a> </li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="panel panel-default facet_limit blacklight-read_access_virtual_group_ssim ">
+					<div class="collapsed collapse-toggle panel-heading" data-toggle="collapse" data-target="#facet-read_access_virtual_group_ssim">
+						<h5 class="panel-title">
+							<a data-no-turbolink="true" href="#">External Group</a> 
+						</h5>
+					</div>
+					<div id="facet-read_access_virtual_group_ssim" class="panel-collapse facet-content collapse">
+						<div class="panel-body">
+							<ul class="facet-values list-unstyled">
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bread_access_virtual_group_ssim%5D%5B%5D=BL-LDLP-VariationsMCOUsers">BL-LDLP-VariationsMCOUsers</a></span>
+								<div class="facet-count">
+									<span class="">894</span>
+								</div>
+								</li>
+								<li><span class="facet-label"><a class="facet_select" href="/catalog?f%5Bread_access_virtual_group_ssim%5D%5B%5D=Avalon">Avalon</a></span>
+								<div class="facet-count">
+									<span class="">1</span>
+								</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="content" class="col-md-9 col-sm-8">
+		<h2 id="featured_content_header">
+			Sample Content
+		</h2>
+		<div id="featured_content" class="row">
+			<div class="col-md-4">
+				<h4>
+					Featured Video
+				</h4>
+				<a href="https://pawpaw.dlib.indiana.edu/media_objects/avalon:sample-beginning-responsibility-lunchroom"> <img alt="Featured Video" src="//pawpaw.dlib.indiana.edu//assets/lunchroomManners-4f139857248d2f49f7febaa59c506f7c.jpg" /> </a> 
+			</div>
+			<div class="col-md-4">
+				<h4>
+					Featured Audio
+				</h4>
+				<a href="https://pawpaw.dlib.indiana.edu/media_objects/avalon:sample-mahler-symphony-3"> <img alt="Featured Audio" src="//pawpaw.dlib.indiana.edu//assets/mahler-b53cd8f9fc6e816d3f2d32fca93f307a.jpg" /> </a> 
+			</div>
+			<div class="col-md-4">
+				<h4>
+					Featured Video
+				</h4>
+				<a href="https://pawpaw.dlib.indiana.edu/media_objects/avalon:sample-fete-excerpt"> <img alt="Featured Video" src="//pawpaw.dlib.indiana.edu//assets/organClip-315b242d1b5ef4dde288ee0549b96ec2.jpg" /></a></li>
+			</div>
+		</div>
+		<h4>
+			Using the System
+		</h4>
+		<p>
+			Avalon houses audio and video collections. Use the search box, or browse using the terms on the left side to discover content. Some content is only available when you sign in. Sign in with your ID and passphrase.
+		</p>
+	</div>
+</div>
+<div class="container-fluid">
+	<footer>
+		<ul>
+			<li><img alt="Avalon Media System - Release 4.0.1" src="//pawpaw.dlib.indiana.edu/assets/AvalonMediaSystem_Logo_A-d918d9f0531edbcbe069b764a658c3da.png" /> 
+			<li><a href="http://www.avalonmediasystem.org">Avalon Media System Project Website</a> </li>
+			<li><a href="/comments">Contact Us</a></li>
+		</ul>
+		<div class="release">
+			Avalon Media System Release 4.0.1 
+		</div>
+	</footer>
+</div>
+<!-- With this many Javascript files performance will be much better
+         if they are included here. That means the important content will
+         load first; the page will not gag on trying to pull down files
+         from a CDN -->
+<script src="//pawpaw.dlib.indiana.edu/assets/application-6aa66e9d4e2df683da13d8528a7bdbad.js">
+</script>
+</body>
+</html>

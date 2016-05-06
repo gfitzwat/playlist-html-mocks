@@ -1,0 +1,33 @@
+.dropdown-menu .divider{margin:2px 0;}
+#sort-Playlists .btn{margin:0 3px;}
+.icon-cancel-1{padding-left:8px;}
+.icon-cancel-1 span{height:1em;float:left; padding:2px 1px 0 0;}
+
+#documents.dd-list li.row{border-bottom:1px solid #ccc; margin-bottom:.25em;padding:.5em 0;}
+
+    .position-input {max-width:3em;}
+    .dd-list{list-style:none;}
+.dd-handle {
+    display: inline-block;
+    height: 100%;
+    margin: 0 0.2em 0 0;
+    padding: 5px 10px;
+    color: #333;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background: #fafafa;
+    background: -webkit-linear-gradient(top, #fafafa 0%, #eee 100%);
+    background: -moz-linear-gradient(top, #fafafa 0%, #eee 100%);
+    background: linear-gradient(top, #fafafa 0%, #eee 100%);
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+
+.select-delete .btn, .select-delete select{margin:0;}
+.empty, .inner .disabled, .toggle_bookmark,#bookmarks_selectall{display:none;}
+.show .toggle_bookmark,.show #bookmarks_selectall{display:inline;}
